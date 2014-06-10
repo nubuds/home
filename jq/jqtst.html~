@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo</title>
+</head>
+<body>
+<a href="../../1">one</a>
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+ 
+   $(document).ready(function(){
+   $("a").click(function(event){
+   alert("Thanks for visiting");
+   event.preventDefault();
+   })
+   });
+ 
+    </script>
+</body>
+</html>

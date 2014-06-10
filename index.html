@@ -1,1 +1,165 @@
+<script src="jq/jquery-2.1.1.min.js"></script>
+
+<script>
+
+var filename="nubuds1.html";
+
+$(document).ready(function(){
+
+$.get( filename, function( data ) {
+  $( "#divcontent" ).html( data );
+  playani();
+});
+
+});//ready
+</script>
+
+<style>
+body{
+
+-webkit-animation:myfirst 3.5s;
+-webkit-animation-play-state:paused;
+margin-top:0px;
+margin-left:0px;
+margin-right:0px;
+background:rgb(79,142,86);
+animation:myfirst;
+-webkit-animation-delay:1.5s;
+-webkit-animation-fill-mode: forwards;
+}
+
+#divheader{
+position:relative;
+opacity:0;
+height:50px;
+background:rgb(79,142,86);
+text-align:center;
+-webkit-animation-play-state:paused;
+-webkit-animation:mythird 3s;
+animation:mythird;
+-webkit-animation-delay:3.5s;
+-webkit-animation-fill-mode: forwards;
+}
+#divcontent{	
+position:relative;
+opacity:0;
+text-align:center;
+padding:10px;
+-webkit-animation-play-state:paused;
+-webkit-animation:mythird1 1.5s;
+animation:mythird1;
+-webkit-animation-delay:3.5s;
+-webkit-animation-fill-mode: forwards;
+}
+#divfooter{
+position:fixed;
+bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+opacity:0;
+text-align:center;
+width:100%;
+background:rgb(79,142,86);
+z-index:1;
+-webkit-animation-play-state:paused;
+-webkit-animation:mythird2 1.5s;
+animation:mythird2;
+-webkit-animation-delay:3.5s;
+-webkit-animation-fill-mode: forwards;
+}
+.img-footer-class{
+width:64px;
+}
+#img_nu{
+position:absolute;
+width:64px;
+top:50%;
+left:50%;
+margin-top:-32px;
+margin-left:-32px;
+-webkit-animation-play-state:paused;
+-webkit-animation:mysecond1 4.5s;
+animation:mysecond1;
+-webkit-animation-delay:0.5s;
+-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes myfirst
+{
+0%{background:rgb(79,142,86);}
+45%{background:rgb(79,142,86);}
+100%{background:white;}
+}
+
+@-webkit-keyframes mysecond1
+{
+0%{opacity:1;}
+100%{top:26px;opacity:1;-webkit-transform:scale(.7,.7);}
+}
+@-webkit-keyframes mythird
+{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+@-webkit-keyframes mythird1
+{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+@-webkit-keyframes mythird2
+{
+0%{opacity:0;}
+100%{opacity:.8;}
+}
+</style>
+<script>
+function playani(){
+var header1=document.getElementById("divheader");
+header1.style.webkitAnimationPlayState="running";
+var divcontent1=document.getElementById("divcontent");
+divcontent1.style.webkitAnimationPlayState="running";
+var divfooter1=document.getElementById("divfooter");
+divfooter1.style.webkitAnimationPlayState="running";
+
+var img_nu1=document.getElementById("img_nu");
+
+img_nu1.style.webkitAnimationPlayState="running";
+
+var body1=document.getElementsByTagName('body')[0];
+
+body1.style.webkitAnimationPlayState="running";
+}
+
+function showfooter(){
+var divfooter1=document.getElementById("divfooter");
+if(divfooter1.style.display=="none"){divfooter1.style.display="block";}
+else{divfooter1.style.display="none";}
+}
+</script>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+<body onload="console.log('body onload');">
+	<div id="divheader">
+	<!img align="right" src="icons/tmp_nu_menu.png" onclick="showfooter();">
+	</div>
+	
+
+	<div id="divfooter">
+		
+<div align="center">
 Nubuds Home
+</div>
+	</div>
+	
+	<div id="divcontent">
+	<img src="icons/loading.gif" width="25px">
+	</div>
+		
+	<div id="divname" align="center">
+
+	<img id="img_nu" src="icons/icon_nb1_64.png" onclick="playani();" onload="console.log('img_nu onload');">
+
+	</div>
+	
+</body>
